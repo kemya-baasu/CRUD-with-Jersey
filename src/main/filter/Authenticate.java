@@ -49,7 +49,7 @@ public class Authenticate implements ContainerRequestFilter {
     private User validateToken(String username, String password) throws Exception {
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost/Zwigo", "postgres", "postgres");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost/Zwigo", "****", "*****");
             PreparedStatement p=c.prepareStatement("select * from token_based_authentication where username=? and password=?");
             p.setString(1,username);
             p.setString(2,password);
